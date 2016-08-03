@@ -31,12 +31,6 @@
 </div>
 <div id="map-canvas"></div>
 
-<script type="text/javascript">
-  function initMap() {
-    alert("yes!")
-  }
-</script>
-
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= Rails.application.secrets.googlemaps_api_key %>&callback=initMap"></script>
 <script type="text/javascript">
 var directionsDisplay;
