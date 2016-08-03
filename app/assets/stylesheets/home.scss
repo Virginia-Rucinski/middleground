@@ -1,46 +1,46 @@
-
-
-/*@import 'partials/fonts';*/
+@import "partials/*";
 
 
 #header {
-  margin-left: 10%;
-
-
-/*      
-  //   #logo1 {
-  //     font-family: $firstfont; 
-  //   }
-
-  //   #logo2 {
-  //     font-family: $secondfont;
-  //   }
-  }*/
-}
+  margin-left: 80px;
+  margin-bottom: 100px;
 
  h2 {
   display: inline;
   width: 0px;
-  font-size: 50px;
-}  
+  
 
-  img {
-    margin-top: 5px;
   }
 
+  #logo1 {
+    font-family: $first-font; 
+    font-weight: 300;
+    font-size: 32px;
+  }
+
+  #logo2 {
+    font-family: $second-font;
+    font-size: 30px;
+  }
+
+  img {
+    height: 25px;
+    width: 25px;
+    margin-top: 5px;
+  }
+}
 
 #map-canvas {
-  height: 500px; 
-  width: 500px;
-  margin: 0px;
+  height: 350px; 
+  width: 350px;
+  margin: 30px;
   padding: 0px;
 }
 
-
 #panel {
   position: absolute;
-  top: 100px;
-  left: 50%;
+  top: 70px;
+  left: 240px;
   margin-left: -180px;
   z-index: 5;
   background-color: #fff;
