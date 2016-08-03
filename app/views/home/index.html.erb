@@ -5,128 +5,91 @@
 </div>  
   
   <title>Geocoding service</title>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Directions service</title>
-    <style>
-      html, body, #map-canvas {
-        height: 70%;
-        width: 70%;
-        /*margin: 0px;*/
-        padding: 0px
-        margin-left: 3000px;
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-      }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script>
-        var directionsDisplay;
-        var directionsService = new google.maps.DirectionsService();
-        var map;
 
-        function initialize() {
-            directionsDisplay = new google.maps.DirectionsRenderer();
-            var philly = new google.maps.LatLng(39.9525839, -75.1652215); //initialize the first value
-            var mapOptions = {
-                zoom: 9,
-                center: philly
-            };
-            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); //mapOptions call from above //displays the map
-            directionsDisplay.setMap(map); //shows the directions
-        }
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= Rails.application.secrets.googlemaps_api_key %>"></script>
+<script type="text/javascript">
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
 
-        function calcRoute() {
-
-            var start = document.getElementById('start').value;
-            var end = document.getElementById('end').value;
-            var request = {
-                origin: start,
-                destination: end,
-                travelMode: google.maps.TravelMode.TRANSIT //DRIVING (Default) indicates standard driving directions using the road network.
-                                                        // BICYCLING requests bicycling directions via bicycle paths & preferred streets.
-                                                        // TRANSIT requests directions via public transit routes.
-                                                        // WALKING requests walking directions via pedestrian paths & sidewalks.
-
-
-
-            };
-            directionsService.route(request, function (response, status) {
-                if (status == google.maps.DirectionsStatus.OK) {
-                    directionsDisplay.setDirections(response);
-                    var numberofWaypoints = response.routes[0].overview_path.length;
-                    
-                    var midPoint=response.routes[0].overview_path[parseInt( numberofWaypoints / 2)];
-                    var marker = new google.maps.Marker({
-                        map: map,
-                        position:new google.maps.LatLng(midPoint.lat(),midPoint.lng()),
-                        title :' Mid Point'
-                    });
-                    
-                    
-                }
-            });
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize); //load
-
-    </script>
-  </head>
-  <body>
-    <div id="panel">
-    <b>Start: </b>
-    <select id="start" onchange="calcRoute();">
-      <option value="philadelphia, pa">Philadelphia</option>
-      <option value="new york, ny">New York</option>
-      <option value="los angeles, ca">Los Angeles</option>
-      <option value="bronx, ny">The Bronx</option>
-      <option value="brooklyn, ny">Brooklyn</option>
-      <option value="90 John St, new york, ny">NYCDA</option>
-    </select>
-    <b>End: </b>
-    <select id="end" onchange="calcRoute();">
-      <option value="philadelphia, pa">Philadelphia</option>
-      <option value="new york, ny">New York</option>
-      <option value="los angeles, ca">Los Angeles</option>
-      <option value="bronx, ny">The Bronx</option>
-      <option value="brooklyn, ny">Brooklyn</option>
-      <option value="90 John St, new york, ny">NYCDA</option>
-    </select>
-    </div>
-    <div id="map-canvas"></div>
-  </body>
-</html>
-
-
-<!-- search, info onto clicking midpoint -->
-
-<!-- <script
-src="http://maps.googleapis.com/maps/api/js">
-</script>
-
-<script>
 function initialize() {
-  var mapProp = {
-    center:new google.maps.LatLng(51.508742,-0.120850),
-    zoom:5,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    directionsDisplay = new google.maps.DirectionsRenderer();
+    var philly = new google.maps.LatLng(39.9525839, -75.1652215); //initialize the first value
+    var mapOptions = {
+        zoom: 9,
+        center: philly
+    };
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions); //mapOptions call from above //displays the map
+    directionsDisplay.setMap(map); //shows the directions
 }
-google.maps.event.addDomListener(window, 'load', initialize);
+
+function calcRoute() {
+
+    var start = document.getElementById('start').value;
+    var end = document.getElementById('end').value;
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: google.maps.TravelMode.TRANSIT 
+
+    };
+    directionsService.route(request, function (response, status) {
+
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+            var numberofWaypoints = response.routes[0].overview_path.length;
+            
+            var midPoint=response.routes[0].overview_path[parseInt( numberofWaypoints / 2)];
+            var marker = new google.maps.Marker({
+                map: map,
+                position:new google.maps.LatLng(midPoint.lat(),midPoint.lng()),
+                title :'Mid Point'
+            });
+        //                     if(marker){
+        //   marker.destroy()
+        // }
+        }
+
+    });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize); //load
+
+// map.addListener('center_changed', function() {
+//   // 3 seconds after the center of the map has changed, pan back to the
+//   // marker.
+//   window.setTimeout(function() {
+//     map.panTo(marker.getPosition());
+//   }, 3000);
+// });
+
+// marker.addListener('click', function() {
+//   map.setZoom(8);
+//   map.setCenter(marker.getPosition());
+// });
 </script>
 
-<div id="googleMap" style="width:500px;height:380px;"></div>
+<div id="panel">
+  <b>Start: </b>
+  <select id="start" onchange="calcRoute();">
+    <option value="philadelphia, pa">Philadelphia</option>
+    <option value="new york, ny">New York</option>
+    <option value="los angeles, ca">Los Angeles</option>
+    <option value="bronx, ny">The Bronx</option>
+    <option value="brooklyn, ny">Brooklyn</option>
+    <option value="queens, ny">Queens</option>
+    <option value="90 John St, new york, ny">NYCDA</option>
+  </select>
+  <b>End: </b>
+  <select id="end" onchange="calcRoute();">
+    <option value="philadelphia, pa">Philadelphia</option>
+    <option value="new york, ny">New York</option>
+    <option value="los angeles, ca">Los Angeles</option>
+    <option value="bronx, ny">The Bronx</option>
+    <option value="brooklyn, ny">Brooklyn</option>
+    <option value="queens, ny">Queens</option>
+    <option value="90 John St, new york, ny">NYCDA</option>
+  </select>
+</div>
+<div id="map-canvas"></div>
 
- -->
