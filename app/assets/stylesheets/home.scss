@@ -1,40 +1,39 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'partials/fonts';
+
+/*@import 'partials/fonts';*/
 
 
 #header {
   margin-left: 10%;
 
-  
-  h2 {
+
+/*      
+  //   #logo1 {
+  //     font-family: $firstfont; 
+  //   }
+
+  //   #logo2 {
+  //     font-family: $secondfont;
+  //   }
+  }*/
+}
+
+ h2 {
   display: inline;
   width: 0px;
   font-size: 50px;
-
-      
-    #logo1 {
-      font-family: $firstfont; 
-    }
-
-    #logo2 {
-      font-family: $secondfont;
-    }
-  }
+}  
 
   img {
     margin-top: 5px;
   }
-}
+
 
 #map-canvas {
-  height: 70%; 
-  width: 70%;
+  height: 500px; 
+  width: 500px;
   margin: 0px;
   padding: 0px;
-  margin-left: 3000px;
 }
 
 
@@ -48,5 +47,3 @@
   padding: 5px;
   border: 1px solid #999;
 }
-
-
