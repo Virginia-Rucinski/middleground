@@ -74,7 +74,7 @@ function calcRoute() {
               content:"This is your middle ground!"
             });
             google.maps.event.addListener(marker,'click',function() { //zooms in
-              map.setZoom(9);
+              map.setZoom(14);
               map.setCenter(marker.getPosition());
               infowindow.open(map,marker);
             });
