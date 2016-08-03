@@ -37,11 +37,16 @@ function calcRoute() {
                 position:new google.maps.LatLng(midPoint.lat(),midPoint.lng()),
                 title :'Mid Point'
             });
+            google.maps.event.addListener(marker,'click',function() { //zooms in
+              map.setZoom(9);
+              map.setCenter(marker.getPosition());
+            });
         }
     });
 }
 
 google.maps.event.addDomListener(window, 'load', initialize); //load
+
 
 </script>
 
