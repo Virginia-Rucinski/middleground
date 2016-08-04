@@ -7,6 +7,13 @@
  
 // mobile first sass
 
+a {
+    height: 350px; 
+    width: 350px;
+    margin-left: 40px;
+    padding: 0px;
+}
+
 #header {
   padding-top: 10px;
   margin-bottom: 0px;
@@ -48,6 +55,7 @@
   #map-canvas {
     height: 350px; 
     width: 350px;
+    margin-bottom: 40px;
     margin-left: 40px;
     padding: 0px;
   }
@@ -71,11 +79,14 @@
 // Google Maps API - Places
 
 #gmap_canvas {
-    position: relative;
+    /*position: relative;*/
     height: 350px; 
     width: 350px;
+    margin-top: 40px;
     margin-left: 40px;
+    margin-bottom: 40px;
     padding: 0px;
+    clear: left;
 }
 .actions {
     background-color: #FFFFFF;
@@ -92,7 +103,6 @@
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
-
 }
 .actions label {
     display: block;
@@ -154,3 +164,6 @@
     box-shadow: inset 0 0 4px 2px #abbccf, 0 0 1px 0 #eeeeee;
 }
 
+.botton_wrapper2 {
+    background-color: green;
+}
