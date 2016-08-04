@@ -64,32 +64,27 @@
   }
 }
 
+.WolframAlphaWidget WidgetTheme {
+  margin-left: 102px;
+}
+
 //breakpoints
 
+@media all and (min-width: 600px) {
 
+  #header{
 
+      h2{
+        #logo1 {
+          font-size: 80px;
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #logo2 {
+          font-size: 50px;
+        }
+      }
+    }    
+}
 
 
 
