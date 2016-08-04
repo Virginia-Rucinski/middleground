@@ -56,7 +56,7 @@
     position: absolute;
     top: 70px;
     left: 240px;
-    margin-left: -180px;
+    margin-left: -195px;
     z-index: 5;
     background-color: #fff;
     padding: 5px;
@@ -64,6 +64,10 @@
   }
 }
 
+button {
+  margin: 30px 30px 30px 65px; 
+  width: 300px;
+}
 //breakpoints
 
 
