@@ -29,7 +29,7 @@
     </select>
   </div>
   <div id="map-canvas"></div>
-  <%=link_to "Places to go!", home_places_path %>
+  <a href="/home/places" onclick="reload()">Places to go!</a>
   </div>
 
 
@@ -88,6 +88,9 @@
 
   google.maps.event.addDomListener(window, 'load', initialize); //load
 
+  function reload() {
+    location.reload();
+  }
 
   </script>
 

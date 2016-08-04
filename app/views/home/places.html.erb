@@ -5,7 +5,7 @@
 
 <!-- Google Maps API - Places -->
 <div class="wrapper">
-  <%=link_to "Choose another middle*ground!", home_index_path %>
+  <a href="/" onclick="reload()">Choose another middle ground!</a>
   <div class="actions">
 
       <div class="button_wrapper1">
@@ -228,6 +228,10 @@ function toggleBounce() {
     marker.setAnimation(google.maps.Animation.BOUNCE);
   }
 
+}
+
+function reload() {
+  location.reload();
 }
 
 </script>
