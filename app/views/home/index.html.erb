@@ -1,3 +1,4 @@
+
 <div class="wrapper">
   <div id="panel">
     <b>Start: </b>
@@ -22,7 +23,11 @@
     </select>
   </div>
   <div id="map-canvas"></div>
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= Rails.application.secrets.googlemaps_api_key %>&libraries=places"></script>
+  <a href="/home/places" onclick="reload()">Places to go!</a>
+  </div>
+
+
+
   <script type="text/javascript">
   var directionsDisplay;
   var directionsService = new google.maps.DirectionsService();
@@ -77,11 +82,14 @@
 
   google.maps.event.addDomListener(window, 'load', initialize); //load
 
+  function reload() {
+    location.reload();
+  }
 
   </script>
+
 <script type="text/javascript" src="http://api.wolframalpha.com/v2/query?appid=<%= Rails.application.secrets.wolframalpha_api_key%>"></script>  
 
 <script type="text/javascript" id="WolframAlphaScripta994b2011e83fc53268ebbd103b7f740" src="//www.wolframalpha.com/widget/widget.jsp?id=a994b2011e83fc53268ebbd103b7f740"></script>
 
 </div>
-

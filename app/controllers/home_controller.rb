@@ -3,4 +3,7 @@ class HomeController < ApplicationController
   	@googlemaps_api_key = Rails.application.secrets.googlemaps_api_key
     @wolframalpha_api_key = Rails.application.secrets.wolframalpha_api_key
   end
+
+  def places
+  end
 end
