@@ -1,23 +1,23 @@
 
 <!-- Google Maps API - Places -->
-<div class="wrapper">
+<div class="wrapper2">
 
   <div id="gmap_canvas"></div>
 
   <div class="actions">
 
     <div class="button_wrapper1">
-      <div class="button">
+      <div>
           <label for="gmap_where">Where:</label>
           <input id="gmap_where" type="text" name="gmap_where" /></div>
       <div id="button2" class="button" onclick="findAddress(); return false;">Search for address</div><br><br>
     </div>
 
       <div class="button_wrapper2">
-        <div class="button">
+        <div>
             <label for="gmap_keyword">Keyword (optional):</label>
             <input id="gmap_keyword" type="text" name="gmap_keyword" /></div>
-        <div class="button">
+        <div>
             <label for="gmap_type">Type:</label>
             <select id="gmap_type">
                 <option value="food">food</option>
@@ -31,7 +31,6 @@
                 <option value="store">store</option>
             </select>
         </div>
-        <div class="button">
             <label for="gmap_radius">Radius:</label>
             <select id="gmap_radius">
                 <option value="500">500</option>
@@ -39,14 +38,14 @@
                 <option value="1500">1500</option>
                 <option value="5000">5000</option>
             </select>
-        </div>
+        
         <input type="hidden" id="lat" name="lat" value="40.7143528" />
         <input type="hidden" id="lng" name="lng" value="-74.0059731" />
         <div id="button1" class="button" onclick="findPlaces(); return false;">Search for places of interest</div>
       </div>
   </div>
   <div class="linkto">
-    <a href="/" onclick="reload()">Choose another middle ground!</a>
+    <a href="/" onclick="reload()" class="back-button">Choose another middle ground!</a>
   </div>
   </div>
 
