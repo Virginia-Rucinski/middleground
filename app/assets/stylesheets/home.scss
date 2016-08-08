@@ -20,8 +20,9 @@ a {
 #header {
   padding-top: 10px;
   margin-bottom: 0px;
-  height: 40vh;
+  height: 25vh;
   background-color: $first-color;
+
 
   h2 {
     display: inline;
@@ -79,7 +80,24 @@ a {
     display: none;
     background-color: $first-color;
     position: relative;
-    z-index: 3;
+  }
+  
+  .accordion-close {
+    background-color:$second-color ;
+    color: $first-color;
+    padding: 5px;
+    width: 200px;
+    font-size: 18px;
+    left: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: $first-font;
+    text-decoration: none;
+    margin-left: 3vw;
+
+    &:hover {
+    border-bottom: 1px solid $second-color;
+    }
   }
 
 }
@@ -103,11 +121,10 @@ a {
   }
 
   #panel {
-    position: absolute;
-    top: 44vh;
+    position: relative;
     left: 50vw;
+    width: 350px;
     margin-left: -180px;
-    z-index: 5;
     background-color: #fff;
     padding: 5px;
     border: 1px solid #999;
@@ -125,6 +142,22 @@ a.new-button, a.back-button {
   font-family: $first-font;
   text-decoration: none;
   margin-left: 10vw;
+
+  &:hover {
+    border-bottom: 1px solid $first-color;
+  }
+}
+
+#button1 {
+  background-color: $first-color;
+  color: white;
+  padding: 5px;
+  width: 300px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: $first-font;
+  text-decoration: none;
 
   &:hover {
     border-bottom: 1px solid $first-color;
@@ -155,9 +188,7 @@ a.new-button, a.back-button {
     background-color: #FFFFFF;
     bottom: 14vh;
     padding: 5px;
-    position: absolute;
-    right: 20vw;
-    z-index: 2;
+    position: relative;
     width: 265px;
     height: 290px;
     border-top: 1px solid #abbbcc;
@@ -206,7 +237,7 @@ a.new-button, a.back-button {
 @media all and (min-width: 650px) {
 
   #header{
-    height: 300px;
+    height: 35vh;
 
     h2#logo1 {
       margin-top: 0px;  
@@ -242,8 +273,14 @@ a.new-button, a.back-button {
     .accordion-control {
       width: 160px;
       margin-left: 9vw;
-    }
-  }
+    }    
+
+    .accordion-panel{
+      position: fixed;
+      // display: hidden;
+    } 
+
+   }
 
   .wrapper {
     height: 140vh; 
@@ -256,7 +293,6 @@ a.new-button, a.back-button {
     }
 
     #panel {
-      top: 48vh;
       left: 50%;
     }
   }
@@ -284,8 +320,8 @@ a.new-button, a.back-button {
     width: 25vw;
     height: 44vh;
     padding: 10px;
-    bottom: 10vh;
-    right: 34vw;
+    bottom: 135vh;
+    left: 38vw;
   }
 
 }
