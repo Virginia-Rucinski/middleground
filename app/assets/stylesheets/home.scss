@@ -115,6 +115,7 @@ a {
     width: 80vw;
     margin-left: 30px;
     margin-top: 20px;
+    margin-bottom: 40px;
     padding: 0px;
     border: 1px solid black;
   }
@@ -193,10 +194,11 @@ a.back-button {
     width: 80vw;
     margin-top: 90px;
     margin-left: 40px;
-    margin-bottom: 40px;
+    margin-bottom: -220px;
     padding: 0px;
     clear: left;
-    border: 1px solid black
+    border: 1px solid black;
+    
 }
 
 .actions {
